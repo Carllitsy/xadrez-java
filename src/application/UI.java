@@ -68,8 +68,15 @@ public class UI {
         System.out.println("Turno: " + chessMatch.getTurn());
         String color = (chessMatch.getCurrentPlayer() == Color.WHITE) ? "brancas" : "pretas";
         System.out.println("Movimento atual: Peças " + color);
-        if (chessMatch.isCheck())
-            System.out.println("CHECK!");
+        if (!chessMatch.isCheckMate()) {
+            if (chessMatch.isCheck())
+                System.out.println("CHECK!");
+        }
+        else {
+            System.out.println("CHECKMATE!");
+            String winner = (chessMatch.getCurrentPlayer() == Color.WHITE) ? "Peças brancas" : "Peças pretas";
+            System.out.println(winner + " venceram");
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
