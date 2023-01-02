@@ -12,11 +12,6 @@ public class King extends ChessPiece {
     }
 
     @Override
-    public String toString() {
-        return "r";
-    }
-
-    @Override
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
         Position p = new Position(0,0);
@@ -32,5 +27,10 @@ public class King extends ChessPiece {
             p.setRow(p.getRow() + 1);
         }
         return mat;
+    }
+
+    @Override
+    public String toString() {
+        return "r";
     }
 }
