@@ -42,7 +42,11 @@ public class Main {
 
                 if (chessMatch.getPromoted() != null) {
                     System.out.println("Digite para qual peça deseja promover!! (B/C/R/T): ");
-                    String type = sc.nextLine();
+                    String type = sc.nextLine().toUpperCase();
+                    while (!type.equals("C") && !type.equals("R") && !type.equals("B") && !type.equals("T")) {
+                        System.out.println("Peça invalida!! Digite para qual peça deseja promover!! (B/C/R/T):");
+                        type = sc.nextLine().toUpperCase();
+                    }
                     chessMatch.replacePromotedPiece(type);
                 }
             }

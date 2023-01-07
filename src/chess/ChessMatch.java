@@ -5,8 +5,6 @@ import boardgame.Piece;
 import boardgame.Position;
 import chess.pieces.*;
 
-import javax.swing.*;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -167,7 +165,7 @@ public class ChessMatch {
         if (promoted == null)
             throw new IllegalStateException("Não existe peça a ser promovida");
         if (!type.equals("C") && !type.equals("R") && !type.equals("B") && !type.equals("T"))
-            throw new InvalidParameterException("Peça invalida");
+            return promoted;
 
         Position pos = promoted.getChessPosition().toPosition();
         Piece p = board.removePiece(pos);
